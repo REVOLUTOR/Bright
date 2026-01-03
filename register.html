@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Your Child - Bright Schools</title>
+    <!-- logo -->
+    <link rel="icon" type="image/png" href="img/logo.png">
+
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url("img/carousel-5.jpg") no-repeat center center / cover;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .containerd { max-width: 700px; margin: 0 auto; background: white; padding: 40px; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        legend {
+    display: inline-block;
+    padding: 6px 16px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 50px;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+input, select, textarea {
+    background: #f9fbff;
+}
+
+input:focus, select:focus, textarea:focus {
+    background: #ffffff;
+    transform: scale(1.01);
+}
+
+
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .required {
+    color: #ff6b6b;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+        
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="number"]:focus,
+        input[type="date"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }
+        
+        .form-group-full {
+            grid-column: 1 / -1;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        button {
+            flex: 1;
+            padding: 14px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-submit {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: #4a2c2a;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(255, 154, 158, 0.5);
+}
+
+        
+        .btn-reset {
+            background: #ecf0f1;
+            color: #333;
+        }
+        
+        .btn-reset:hover {
+            background: #bdc3c7;
+        }
+        
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+        /* ===== Premium UI Enhancements ===== */
+            fieldset {
+                background: #fff;
+                padding: 25px;
+                border-radius: 16px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            }
+
+            /* ===== Animated Popup ===== */
+            .success-popup {
+                position: fixed;
+                inset: 0;
+                background: rgba(0,0,0,0.55);
+                display: none;
+                align-items: center;
+                justify-content: center;
+                z-index: 9999;
+            }
+
+            .success-card {
+                background: #fff;
+                padding: 35px 45px;
+                border-radius: 22px;
+                text-align: center;
+                max-width: 420px;
+                width: 90%;
+                animation: popupIn 0.5s ease forwards;
+            }
+
+            .checkmark {
+                width: 70px;
+                height: 70px;
+                background: #28a745;
+                color: #fff;
+                font-size: 36px;
+                border-radius: 50%;
+                line-height: 70px;
+                margin: 0 auto 15px;
+            }
+
+            @keyframes popupIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(40px) scale(0.85);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+                }
+            }
+
+    </style>
+</head>
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
+            <a href="index.html" class="navbar-brand">
+                <h1 class="m-0 text-primary d-flex align-items-center"><img src="img/logo.png" alt="BRIGHT SCHOOLS Logo" class="me-3" style="height:40px;">
+                    BRIGHT SCHOOLS<img src="img/logo1.png" alt="BRIGHT SCHOOLS Logo" class="me-3" style="height:40px;">
+                </h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav mx-auto">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About Us</a>
+                    <a href="classes.html" class="nav-item nav-link">Classes</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
+                            <a href="facility.html" class="dropdown-item">School Features</a>
+                            <a href="team.html" class="dropdown-item">Our Teachers</a>
+                            <a href="call-to-action.html" class="dropdown-item">Register your kid</a>
+                            <a href="appointment.html" class="dropdown-item">Make Appointment</a>
+                            <a href="testimonial.html" class="dropdown-item">Testimonials</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                </div>
+                <a href="" class="btn btn-primary rounded-pill px-3 d-none d-lg-block">Join Us<i class="fa fa-arrow-right ms-3"></i></a>
+            </div>
+        </nav>
+        <!-- Navbar End -->
+    <div class="containerd">
+        <div class="header">
+            <h1><img src="img/logo.png" alt="School Logo" style="height: 40px; vertical-align: middle;">Register Your Child<img src="img/logo1.png" alt="School Logo" style="height: 40px; vertical-align: middle;"></h1>
+            <p>Bright Academy Daycare Center & Bright English Medium Pre & Primary School</p>
+            <p style="margin-top:10px;font-size:15px;color:#444">
+    💖 We’re excited to welcome your little one to Bright Schools!
+</p>
+
+        </div>
+        
+        <div class="success-message" id="successMessage">
+            ✓ Registration submitted successfully! We'll contact you soon.
+        </div>
+        
+        <form 
+            id="registrationForm" 
+            action="https://formsubmit.co/brightacademyschoolstzl.com" 
+            method="POST">
+            
+            <input type="hidden" name="_subject" value="New Child Registration - Bright Schools">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_honeypot" value="">
+            <input type="hidden" name="_next" value="">
+
+
+            <!-- CHILD'S INFORMATION SECTION -->
+            <fieldset style="border: none; padding: 0;">
+                <legend style="font-weight: 600; color: #333; margin-bottom: 20px; font-size: 16px;">
+                    Child's Information
+                </legend>
+                
+                <!-- Child's Name -->
+                <div class="form-group">
+                    <label for="childName">
+                        Child's Full Name <span class="required">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="childName" 
+                        name="childName" 
+                        placeholder="e.g., Hujjatu Zacharia Hamid"
+                        required
+                    >
+                    <div class="error-message" id="childNameError"></div>
+                </div>
+                
+                <!-- Age & Date of Birth -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="childAge">
+                            Age <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="number" 
+                            id="childAge" 
+                            name="childAge" 
+                            placeholder="e.g., 5"
+                            min="1"
+                            max="12"
+                            required
+                        >
+                        <div class="error-message" id="childAgeError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="childDOB">
+                            Date of Birth <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="date" 
+                            id="childDOB" 
+                            name="childDOB"
+                            required
+                        >
+                        <div class="error-message" id="childDOBError"></div>
+                    </div>
+                </div>
+                
+                <!-- Class Selection -->
+                <div class="form-group">
+                    <label for="classSelection">
+                        Select Class <span class="required">*</span>
+                    </label>
+                    <select id="classSelection" name="classSelection" required>
+                        <option value="">-- Choose a Class --</option>
+                        <option value="daycare">BABY I</option>
+                        <option value="playgroup">BABY II</option>
+                        <option value="nursery">MIDDLE CLASS</option>
+                        <option value="kg1">PRE-UNIT</option>
+                        <option value="kg2">GRADE ONE</option>
+                        <option value="grade1">GRADE TWO</option>
+                        <option value="grade2">GRADE THREE</option>
+                    </select>
+                    <div class="error-message" id="classError"></div>
+                </div>
+            </fieldset>
+            
+            <!-- CONTACT INFORMATION SECTION -->
+            <fieldset style="border: none; padding: 0; margin-top: 30px;">
+                <legend style="font-weight: 600; color: #333; margin-bottom: 20px; font-size: 16px;">
+                    Parent/Guardian Contact Information
+                </legend>
+                
+                <!-- Parent Name -->
+                <div class="form-group">
+                    <label for="parentName">
+                        Parent/Guardian Full Name <span class="required">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="parentName" 
+                        name="parentName" 
+                        placeholder="e.g., Hujjatu Zacharia Hamid"
+                        required
+                    >
+                    <div class="error-message" id="parentNameError"></div>
+                </div>
+                
+                <!-- Email & Phone -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="parentEmail">
+                            Email Address <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="email" 
+                            id="parentEmail" 
+                            name="parentEmail" 
+                            placeholder="e.g., hujjah@example.com"
+                            required
+                        >
+                        <div class="error-message" id="emailError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="parentPhone">
+                            Phone Number <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="tel" 
+                            id="parentPhone" 
+                            name="parentPhone" 
+                            placeholder="e.g., 0759107860"
+                            required
+                        >
+                        <div class="error-message" id="phoneError"></div>
+                    </div>
+                </div>
+                
+                <!-- Address -->
+                <div class="form-group">
+                    <label for="parentAddress">
+                        Home Address <span class="required">*</span>
+                    </label>
+                    <textarea 
+                        id="parentAddress" 
+                        name="parentAddress" 
+                        placeholder="e.g., Mji Mpya,Lupembe St."
+                        required
+                    ></textarea>
+                    <div class="error-message" id="addressError"></div>
+                </div>
+            </fieldset>
+            
+            <!-- EDUCATIONAL BACKGROUND SECTION -->
+            <fieldset style="border: none; padding: 0; margin-top: 30px;">
+                <legend style="font-weight: 600; color: #333; margin-bottom: 20px; font-size: 16px;">
+                    Previous School Background
+                </legend>
+                
+                <!-- Previous School Name -->
+                <div class="form-group">
+                    <label for="previousSchool">
+                        Previous School/Daycare Name
+                    </label>
+                    <input 
+                        type="text" 
+                        id="previousSchool" 
+                        name="previousSchool" 
+                        placeholder="e.g., Bright Academy Daycare Center (Leave blank if none)"
+                    >
+                </div>
+                
+                <!-- Years in Previous School -->
+                <div class="form-group">
+                    <label for="yearsInSchool">
+                        Duration in Previous School
+                    </label>
+                    <input 
+                        type="text" 
+                        id="yearsInSchool" 
+                        name="yearsInSchool" 
+                        placeholder="e.g., 2 years (Leave blank if none)"
+                    >
+                </div>
+                
+                <!-- Special Notes -->
+                <div class="form-group">
+                    <label for="specialNotes">
+                        Special Notes / Additional Information
+                    </label>
+                    <textarea 
+                        id="specialNotes" 
+                        name="specialNotes" 
+                        placeholder="Any allergies, behavioral notes, or special requirements?"
+                    ></textarea>
+                </div>
+            </fieldset>
+            
+            <!-- FORM ACTIONS -->
+            <div class="btn-group">
+                <button type="submit" class="btn-submit">📝 Register Now</button>
+                <button type="reset" class="btn-reset">Clear Form</button>
+            </div>
+        </form>
+        <div id="formPopup" class="success-popup">
+    <div class="success-card">
+        <div class="checkmark">✓</div>
+        <h4>Registration Sent!</h4>
+        <p>
+            Thank you for registering your child at <strong>Bright Schools</strong>.<br>
+            We will contact you shortly.
+        </p>
+    </div>
+</div>
+
+    </div>
+
+   
+<!-- Footer Start -->
+        <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="text-white mb-4">Get In Touch</h3>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Lupembe St., Mji Mpya, Kiluvya Madukani</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+255 753 609 310<br>+255 752 640 110</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>brightacademyschoolstz@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/bright.academy.schoolstz?igsh=cmdiZTRqb255ZXk3"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=" https://www.facebook.com/profile.php?id=61579166526369"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://wa.me/255759107860"><i class="fab fa-whatsapp"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="text-white mb-4">Quick Links</h3>
+                        <a class="btn btn-link text-white-50" href="about.html">About Us</a>
+                        <a class="btn btn-link text-white-50" href="contact.html">Contact Us</a>
+                        <a class="btn btn-link text-white-50" href="classes.html">Our Services</a>
+                        <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
+                        <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="text-white mb-4">Photo Gallery</h3>
+                        <div class="row g-2 pt-2">
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/img1.jpeg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/img2.jpeg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/img3.jpeg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/img4.jpeg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/img5.jpeg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/img6.jpeg" alt="">
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="gallery.html" class="btn btn-outline-light btn-sm rounded-pill px-4">
+                                More →
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="text-white mb-4">Newsletter</h3>
+                        <p>Subscribe to stay tuned of the events going on at our schools.</p>
+                        <div 
+                            id="newsletterSuccess" 
+                            style="display:none; background:#198754; color:#fff; padding:10px; border-radius:6px; margin-bottom:10px; font-size:14px;"
+                            >
+                            ✓ You have successfully subscribed to our newsletter!
+                        </div>
+
+
+                        <form 
+                            id="newsletterForm"
+                            action="https://formsubmit.co/hameedhujjatu01@gmail.com" 
+                            method="POST">
+
+                            <input type="hidden" name="_subject" value="New Newsletter Subscription">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_honeypot" value="">
+                            <input type="hidden" name="_next" value="">
+
+
+                            <div class="position-relative mx-auto" style="max-width: 400px;">
+                                <input
+                                    class="form-control bg-transparent w-100 py-3 ps-4 pe-5"
+                                    type="email"
+                                    name="subscriber_email"
+                                    placeholder="Your email"
+                                    required
+                                >
+                                <button type="submit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">
+                                    SignUp
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">BrightSchools</a>, All Right Reserved. 
+							
+							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+							Designed By <a class="border-bottom" href="https://wa.me/255759107860">BrightinoTechLab</a>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+    <div id="successPopup" class="success-popup">
+        <div class="success-card">
+            <div class="checkmark">✓</div>
+            <h4>Subscribed!</h4>
+            <p>You have successfully subscribed to our newsletter.</p>
+        </div>
+    </div>
+    <div id="appointmentPopup" class="success-popup">
+    <div class="success-card">
+        <div class="checkmark">✓</div>
+        <h4>Request Sent!</h4>
+        <p>Thank you. We will contact you shortly.</p>
+    </div>
+</div>
+
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script>
+document.getElementById('registrationForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // 🚫 block redirect
+
+    // Error elements
+    const childNameError = document.getElementById('childNameError');
+    const childAgeError = document.getElementById('childAgeError');
+    const childDOBError = document.getElementById('childDOBError');
+    const classError = document.getElementById('classError');
+    const parentNameError = document.getElementById('parentNameError');
+    const emailError = document.getElementById('emailError');
+    const phoneError = document.getElementById('phoneError');
+    const addressError = document.getElementById('addressError');
+
+    document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
+
+    let isValid = true;
+
+    const childName = document.getElementById('childName').value.trim();
+    const childAge = document.getElementById('childAge').value;
+    const childDOB = document.getElementById('childDOB').value;
+    const classSelection = document.getElementById('classSelection').value;
+    const parentName = document.getElementById('parentName').value.trim();
+    const parentEmail = document.getElementById('parentEmail').value.trim();
+    const parentPhone = document.getElementById('parentPhone').value.trim();
+    const parentAddress = document.getElementById('parentAddress').value.trim();
+
+    if (!childName) {
+        childNameError.textContent = "Child's name is required";
+        childNameError.style.display = 'block';
+        isValid = false;
+    }
+
+    if (childAge < 1 || childAge > 12) {
+        childAgeError.textContent = 'Age must be between 1 and 12';
+        childAgeError.style.display = 'block';
+        isValid = false;
+    }
+
+    if (!childDOB) {
+        childDOBError.textContent = 'Date of birth is required';
+        childDOBError.style.display = 'block';
+        isValid = false;
+    }
+
+    if (!classSelection) {
+        classError.textContent = 'Please select a class';
+        classError.style.display = 'block';
+        isValid = false;
+    }
+
+    if (!parentName) {
+        parentNameError.textContent = 'Parent name is required';
+        parentNameError.style.display = 'block';
+        isValid = false;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(parentEmail)) {
+        emailError.textContent = 'Invalid email address';
+        emailError.style.display = 'block';
+        isValid = false;
+    }
+
+    if (!parentPhone) {
+        phoneError.textContent = 'Phone number is required';
+        phoneError.style.display = 'block';
+        isValid = false;
+    }
+
+    if (!parentAddress) {
+        addressError.textContent = 'Address is required';
+        addressError.style.display = 'block';
+        isValid = false;
+    }
+
+    if (!isValid) return;
+
+    // 🎉 SHOW POPUP
+    const popup = document.getElementById('formPopup');
+    popup.style.display = 'flex';
+
+    // 📩 SEND TO FORMSUBMIT (NO REDIRECT)
+    fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
+    }).then(() => {
+        this.reset();
+    }).catch(() => {
+        alert('Submission failed. Please try again.');
+    });
+
+    // ⏱ AUTO CLOSE POPUP
+    setTimeout(() => {
+        popup.style.display = 'none';
+    }, 4000);
+});
+</script>
+
+    <script>
+        document.getElementById('newsletterForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // 🔥 THIS stops redirect completely
+
+            const form = this;
+            const popup = document.getElementById('successPopup');
+
+            // Show animated popup
+            popup.style.display = 'flex';
+
+            // Send form silently using fetch
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(() => {
+                form.reset();
+            }).catch(() => {
+                alert('Subscription failed. Please try again.');
+            });
+
+            // Auto-close popup
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 3000);
+        });
+    </script>
+    <script>
+document.getElementById('appointmentForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // 🔥 stops redirect
+
+    const form = this;
+    const popup = document.getElementById('appointmentPopup');
+
+    // Show animation
+    popup.style.display = 'flex';
+
+    // Send silently
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(() => {
+        form.reset();
+    }).catch(() => {
+        alert('Something went wrong. Please try again.');
+    });
+
+    // Auto-close popup
+    setTimeout(() => {
+        popup.style.display = 'none';
+    }, 3500);
+});
+</script>
+
+
+
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
